@@ -1,0 +1,12 @@
+<label id="txtTitle">Titulo de la Tarea</label><br>
+<input type="text" id="txtTitle" name="txtTitle" [(ngModel)]="tasks.title"/><br><br>
+
+<label for="txtMsg">Descripcion de la Tarea</label><br>
+<textarea cols="50" rows="7" id="txtMsg" name="txtMsg" [(ngModel)]="tasks.description"></textarea><br>
+
+<button type="button" (click)="guardar()">Guardar</button>
+
+<br><br><br>
+<hr>
+
+<app-tarea2></app-tarea2>
