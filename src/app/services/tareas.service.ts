@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, getDocs, query } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, deleteDoc, doc, getDocs, query } from '@angular/fire/firestore';
 import { Tasks } from '../domain/Tasks';
 
 @Injectable({
@@ -15,5 +15,9 @@ export class TareasService {
 
   getTasks(){
     return getDocs(query(collection(this.firestore, 'tareas')))
+  }
+
+  deleteTasks(taskId: string) {
+    return deleteDoc(doc(this.firestore, 'tareas', taskId))
   }
 }

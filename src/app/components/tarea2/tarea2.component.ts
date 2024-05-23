@@ -10,7 +10,7 @@ import { TareasService } from '../../services/tareas.service';
   styleUrl: './tarea2.component.css'
 })
 export class Tarea2Component {
-  
+
   tasks : Tasks = new Tasks()
   task : any
 
@@ -25,5 +25,13 @@ export class Tarea2Component {
         }
       })
     })
+  }
+
+  borrar(taskId: string) {
+    this.tareasService.deleteTasks(taskId).then(() => {
+      console.log('Documento eliminado exitosamente');
+    }).catch(error => {
+      console.log('Error al eliminar documento:', error);
+    });
   }
 }

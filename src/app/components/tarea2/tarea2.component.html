@@ -1,5 +1,7 @@
 <ul>
     @for(msg of task; track msg.id){
-        <li><strong>{{msg.title}}</strong>: <span>{{msg.description}}</span></li>
+        <li><strong>{{msg.title}}</strong>: <span>{{msg.description}}</span>    
+            <button (click)="borrar(msg.id)">Borrar</button><br><br>
+        </li>
     }
 </ul>
